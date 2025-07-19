@@ -25,7 +25,7 @@ def update_listbox():
     for task in tasks:
         listbox.insert(tk.END, task)
 
-# Create main window
+
 root = tk.Tk()
 root.title("To-Do List")
 
@@ -33,16 +33,15 @@ frame = tk.Frame(root)
 frame.pack(pady=10)
 
 entry = tk.Entry(frame, width=40)
-entry.pack(side=tk.LEFT, padx=10)
+entry.pack(side=tk.LEFT, padx=5)
 
-add_button = tk.Button(frame, text="Add Task", command=add_task)
-add_button.pack(side=tk.LEFT)
+add_btn = tk.Button(frame, text="Add Task", command=add_task)
+add_btn.pack(side=tk.LEFT)
 
-listbox = tk.Listbox(root, width=50)
+listbox = tk.Listbox(root, width=50, height=10)
 listbox.pack(pady=10)
 
-delete_button = tk.Button(root, text="Delete Selected Task", command=delete_task)
-delete_button.pack(pady=5)
+del_btn = tk.Button(root, text="Delete Selected Task", command=delete_task)
+del_btn.pack()
 
 root.mainloop()
-
